@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Recepty" representedClassName="Recepty" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="kategorie" optional="YES" attributeType="String"/>
+        <attribute name="nazev" optional="YES" attributeType="String"/>
+        <attribute name="popis" optional="YES" attributeType="String"/>
+        <attribute name="porce" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="suroviny" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Suroviny" inverseName="recepty" inverseEntity="Suroviny"/>
+    </entity>
+    <entity name="Suroviny" representedClassName="Suroviny" syncable="YES" codeGenerationType="class">
+        <attribute name="mnozstvi" optional="YES" attributeType="String"/>
+        <attribute name="nazev" optional="YES" attributeType="String"/>
+        <relationship name="recepty" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recepty" inverseName="suroviny" inverseEntity="Recepty"/>
+    </entity>
+</model>
